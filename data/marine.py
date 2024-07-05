@@ -3,6 +3,6 @@ import time
 
 class checks:
     def reportedWithinRadius(coordinates):
-        request_url = f"http(s)://ais.marineplan.com/location/2/locations.json?area={coordinates}"
+        request_url = f"https://ais.marineplan.com/location/2/locations.json?area={coordinates}"
         print(request.get(request_url))
         return True
