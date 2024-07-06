@@ -4,7 +4,7 @@ from ultralytics import YOLO
 
 class identify:
     def simple(image):
-        model = YOLO("models/storage/boats.pt")
+        model = YOLO("models/storage/boats-quick.pt")
 
         results = model(image)
 
