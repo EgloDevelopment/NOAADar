@@ -1,15 +1,15 @@
+import json; env = json.load(open("config.json"))
+
 from ultralytics import YOLO
 
-import json; env = json.load(open('config.json'))
-
 class identify:
-    def simple(file_location):
-        model = YOLO("boats.pt")
+    def simple(image):
+        model = YOLO("models/storage/boats.pt")
 
-        results = model(f"storage/temp/{file_location}")
+        results = model(image)
 
         #for result in results:
-            #result.save(filename = f"storage/saved/{file_location}")
+            #result.save(filename = "test.jpg")
 
         for result in results[0].boxes:
             if result.conf > float(env["MINIMUM_CONFIDENCE_LEVEL"]) and result.cls == 8:

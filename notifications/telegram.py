@@ -1,12 +1,26 @@
+import json; env = json.load(open("config.json"))
+
 import telegram
 import asyncio
-
-import json; env = json.load(open('config.json'))
+from io import BytesIO
+import time
 
 bot = telegram.Bot(token = env["TELEGRAM_TOKEN"])
 channel_id = env["TELEGRAM_CHANNEL_ID"]
 
 class message:
-    def send(time, station_id, image):
-        asyncio.run(bot.send_message(chat_id = channel_id, text = f"Boat detected on {station_id} at {time}"))
-        #asyncio.run(bot.send_photo(chat_id = channel_id, photo = open(f"storage/saved/{image}", "rb")))
+    def send(station_id, station_image):
+        current_time = time.strftime("%H:%M:%S")
+
+        image = BytesIO()
+        station_image.save(image, format='JPEG')
+        image.seek(0)
+
+        loop = asyncio.get_event_loop()
+
+        if loop.is_running(): # Super scuffed an I hate my life but it works
+            loop.create_task(bot.send_message(chat_id=channel_id, text=f"Boat detected on {station_id} at {current_time} UTC"))
+            loop.create_task(bot.send_photo(chat_id=channel_id, photo=image))
+        else:
+            loop.run_until_complete(bot.send_message(chat_id=channel_id, text=f"Boat detected on {station_id} at {current_time} UTC"))
+            loop.run_until_complete(bot.send_photo(chat_id=channel_id, photo=image))

@@ -1,22 +1,22 @@
-import wget as request # type: ignore // Its fucking broken in my ide
-import time
+import requests
+from PIL import Image
+from io import BytesIO
 
 class images:
     def getOne(station_id):
-        current_time = str(time.time()).split(".")[0] # Scuffed af but works
         request_url = f"https://www.ndbc.noaa.gov/buoycam.php?station={station_id}"
-        request.download(request_url, f"storage/temp/{current_time}-{station_id}.jpg")
+        
+        response = requests.get(request_url)
 
-        return f"{current_time}-{station_id}.jpg"
+        image = Image.open(BytesIO(response.content))
 
-    def getMany(station_ids):
-        file_array = []
+        return image
+    
+    def getTest():
+        request_url = f"https://whitehousecovemarina.com/wp-content/uploads/2022/11/Screen-Shot-2022-11-29-at-1.06.34-PM-1080x675.png"
+        
+        response = requests.get(request_url)
 
-        for station_id in station_ids:
-            current_time = str(time.time()).split(".")[0] # Scuffed af but works
-            request_url = f"https://www.ndbc.noaa.gov/buoycam.php?station={station_id}"
-            request.download(request_url, f"storage/temp/{current_time}-{station_id}.jpg")
-            
-            file_array.append(f"{current_time}-{station_id}.jpg")
+        image = Image.open(BytesIO(response.content))
 
-        return file_array
+        return image

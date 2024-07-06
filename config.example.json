@@ -1,0 +1,12 @@
+{
+    "MODE": "PRODUCTION",
+
+    "STATIONS": ["46011", "46054", "46053", "46069"],
+
+    "MINIMUM_CONFIDENCE_LEVEL": 0.5,
+    
+    "PREFERRED_CONTACT": "TELEGRAM",
+
+    "TELEGRAM_TOKEN": "xxxxxxxxx:xxxxxxxxxxxxxx_xxxxxxxxx",
+    "TELEGRAM_CHANNEL_ID": "xxxxxxxx"
+}
