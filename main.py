@@ -5,12 +5,17 @@ import models.boats as boats
 
 import notifications.telegram as telegram
 
-for station in env["STATIONS"]:
+if env["ALERT_ON_RUN"] == "YES":
+    telegram.alert.send()
 
+for station in env["STATIONS"]:
     if env["MODE"] == "TESTING":
         image = noaa.images.getTest()
     else:
         image = noaa.images.getOne(station)
 
-    if boats.identify.simple(image) == True:
+    identified = boats.identify.simple(image)
+    print(f"{station}: {identified}")
+
+    if identified == True:
         telegram.message.send(station, image)

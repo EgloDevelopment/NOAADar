@@ -8,6 +8,17 @@ import time
 bot = telegram.Bot(token = env["TELEGRAM_TOKEN"])
 channel_id = env["TELEGRAM_CHANNEL_ID"]
 
+class alert:
+    def send():
+        current_time = time.strftime("%H:%M:%S")
+
+        loop = asyncio.get_event_loop()
+
+        if loop.is_running(): # Super scuffed an I hate my life but it works
+            loop.create_task(bot.send_message(chat_id=channel_id, text=f"Running NOAADar at {current_time} UTC"))
+        else:
+            loop.create_task(bot.send_message(chat_id=channel_id, text=f"Running NOAADar at {current_time} UTC"))
+
 class message:
     def send(station_id, station_image):
         current_time = time.strftime("%H:%M:%S")
