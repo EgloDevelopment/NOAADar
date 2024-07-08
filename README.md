@@ -6,7 +6,9 @@ This installation is designed specifically for a fresh installation of  Alpine L
 
 ```
 apk update
-apk add nano
+apk add nano git
+git clone https://github.com/EgloDevelopment/NOAADar
+cd NOAADar
 cp config.example.json config.json
 nano config.json
 ```
