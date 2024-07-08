@@ -1,6 +1,9 @@
 {
     "MODE": "PRODUCTION",
 
+    "SAVE_IMAGES": "NO",
+    "ALERT_ON_RUN": "NO",
+
     "STATIONS": ["46011", "46054", "46053", "46069"],
 
     "MINIMUM_CONFIDENCE_LEVEL": 0.5,
