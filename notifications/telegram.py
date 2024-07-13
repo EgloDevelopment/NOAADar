@@ -14,24 +14,24 @@ class alert:
 
         loop = asyncio.get_event_loop()
 
-        if loop.is_running(): # Super scuffed an I hate my life but it works
-            loop.create_task(bot.send_message(chat_id=channel_id, text=f"Running NOAADar at {current_time} UTC"))
+        if loop.is_running(): # Super scuffed and I hate my life but it works
+            loop.create_task(bot.send_message(chat_id=channel_id, text=f"Running NOAADar at {current_time}"))
         else:
-            loop.create_task(bot.send_message(chat_id=channel_id, text=f"Running NOAADar at {current_time} UTC"))
+            loop.create_task(bot.send_message(chat_id=channel_id, text=f"Running NOAADar at {current_time}"))
 
 class message:
     def send(station_id, station_image):
         current_time = time.strftime("%H:%M:%S")
 
         image = BytesIO()
-        station_image.save(image, format='JPEG')
+        station_image.save(image, format="JPEG")
         image.seek(0)
 
         loop = asyncio.get_event_loop()
 
-        if loop.is_running(): # Super scuffed an I hate my life but it works
-            loop.create_task(bot.send_message(chat_id=channel_id, text=f"Boat detected on {station_id} at {current_time} UTC"))
+        if loop.is_running(): # Super scuffed and I hate my life but it works
+            loop.create_task(bot.send_message(chat_id=channel_id, text=f"Boat detected on {station_id} at {current_time}"))
             loop.create_task(bot.send_photo(chat_id=channel_id, photo=image))
         else:
-            loop.run_until_complete(bot.send_message(chat_id=channel_id, text=f"Boat detected on {station_id} at {current_time} UTC"))
+            loop.run_until_complete(bot.send_message(chat_id=channel_id, text=f"Boat detected on {station_id} at {current_time}"))
             loop.run_until_complete(bot.send_photo(chat_id=channel_id, photo=image))

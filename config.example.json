@@ -1,15 +1,13 @@
 {
     "MODE": "PRODUCTION",
-
+        
     "SAVE_IMAGES": "NO",
     "ALERT_ON_RUN": "NO",
 
-    "STATIONS": ["46011", "46054", "46053", "46069"],
+    "STATIONS": ["42012", "42024", "42036", "42003", "42001", "42002", "42055", "42020", "42019", "42035"],
 
-    "MINIMUM_CONFIDENCE_LEVEL": 0.5,
-    
-    "PREFERRED_CONTACT": "TELEGRAM",
+    "MINIMUM_CONFIDENCE_LEVEL": 0.35,
 
-    "TELEGRAM_TOKEN": "xxxxxxxxx:xxxxxxxxxxxxxx_xxxxxxxxx",
-    "TELEGRAM_CHANNEL_ID": "xxxxxxxx"
+    "TELEGRAM_TOKEN": "xxxxxxxxx:xxxxxxxxxxxxxxxxxxxx-xxxxxxxxxx",
+    "TELEGRAM_CHANNEL_ID": "xxxxxxxxxxxx"
 }
