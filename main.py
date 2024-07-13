@@ -18,4 +18,5 @@ for station in env["STATIONS"]:
     print(f"{station}: {identified}")
 
     if identified == True:
-        telegram.message.send(station, image)
+        location = noaa.stations.getLocation(station)
+        telegram.message.send(station, location, image)
