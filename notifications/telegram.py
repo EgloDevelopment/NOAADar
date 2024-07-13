@@ -20,7 +20,7 @@ class alert:
             loop.create_task(bot.send_message(chat_id=channel_id, text=f"Running NOAADar at {current_time}"))
 
 class message:
-    def send(station_id, station_location, station_image):
+    def send(station_id, station_image, station_location):
         current_time = time.strftime("%H:%M:%S")
 
         station_latitude = station_location.split(",")[0]

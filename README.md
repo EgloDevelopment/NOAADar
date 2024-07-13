@@ -6,6 +6,8 @@ System used to detect undocumented boats and large ships using neural networks a
 This system is reliable within a certain range, but at long range in bad weather a boat could easily blend into the waves, or vice versa, the system could hit on
 whitecaps and other waves, or low flying birds, which is why manual review of the images is needed before dispatching personnel to a location.
 
+The time used in the notifications is based on the system time.
+
 
 # Installation
 This installation is designed specifically for a fresh installation of Alpine Linux
@@ -36,6 +38,7 @@ We were able to successfully monitor from West Florida to the Texas Coastline wi
 to script end, including upload messages to Telegram with locations.
 
 This system has been hard coded to work with Telegram and NOAA only, further implementations are going to be coming soon.
+
 
 # Description of variables
 ```
