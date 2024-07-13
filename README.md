@@ -39,11 +39,11 @@ This system has been hard coded to work with Telegram and NOAA only, further imp
 
 # Description of variables
 ```
-**MODE:** PRODUCTION || TESTING (Determines wether the system will use a image that is guaranteed to hit, used to test configuration)
-**SAVE_IMAGES:** YES || NO (Determines when the script runs if the neural network will save the images it runs on)
-**ALERT_ON_RUN:** YES || NO (Determines if the system will send a Telegram message when it runs)
-**STATIONS:** ["XXXXX", "XXXXX", "XXXXX"...] (Array of station ID's from the NOAA website)
-**MINIMUM_CONFIDENCE_LEVEL:** FLOAT <1 (Percent of confidence the neural network needs to have to hit)
-**TELEGRAM_TOKEN:** TELEGRAM TOKEN (Telegram bot token used to send messages and alerts)
-**TELEGRAM_CHANNEL_ID:** TELEGRAM CHANNEL ID (Determines where to send the messages and alerts)
+MODE: PRODUCTION || TESTING (Determines wether the system will use a image that is guaranteed to hit, used to test configuration)
+SAVE_IMAGES: YES || NO (Determines when the script runs if the neural network will save the images it runs on)
+ALERT_ON_RUN: YES || NO (Determines if the system will send a Telegram message when it runs)
+STATIONS: ["XXXXX", "XXXXX", "XXXXX"...] (Array of station ID's from the NOAA website)
+MINIMUM_CONFIDENCE_LEVEL: FLOAT <1 (Percent of confidence the neural network needs to have to hit)
+TELEGRAM_TOKEN: TELEGRAM TOKEN (Telegram bot token used to send messages and alerts)
+TELEGRAM_CHANNEL_ID: TELEGRAM CHANNEL ID (Determines where to send the messages and alerts)
 ```
